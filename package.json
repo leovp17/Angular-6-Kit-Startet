@@ -1,0 +1,35 @@
+{
+  "autor": "@maeplayo",
+  "bugs": {
+    "url": "https://github.com/leovp17/Angular-6-Starter-Kit/issues"
+  },
+  "description": "Webpack 4, TypeScript 2.9 and Angular 6 starter kit.",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "homepage": "https://github.com/leovp17/Angular-6-Starter-Kit#readme",
+  "keywords": [],
+  "license": "ISC",
+  "name": "Angular-6-Starter-Kit",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leovp17/Angular-6-Starter-Kit.git"
+  },
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack --mode development",
+    "start": "node server.js"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^4.5.2",
+    "html-webpack-plugin": "^3.2.0",
+    "typescript": "^2.9.2",
+    "webpack": "^4.12.1",
+    "webpack-cli": "^3.0.8"
+  },
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.3"
+  }
+}
