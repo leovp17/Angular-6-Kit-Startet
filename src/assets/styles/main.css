@@ -1,7 +1,8 @@
 body {
+    background-color: tomato;
     margin: 0 auto;
     max-width: 1000px;
-    background: url('../../assets/img/infames.jpg') no-repeat center;
+    /*background: url('../../assets/img/infames.jpg') no-repeat center;*/
     display: flex;
     flex-direction: column;
     height: 100%;

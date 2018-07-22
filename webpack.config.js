@@ -1,21 +1,34 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-
-
+// webpack v4
+const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
-    entry: './src/main.ts',
+    entry: {
+        main: './src/main.ts'
+    },
     output: {
-        path: __dirname + '/dist',
-        filename: 'app.js'
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'main.js'
+    },
+    module: {
+        rules: [{
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: "babel-loader"
+                }
+            },
+            {
+                test: /\.css$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: ['css-loader']
+                })
+            }
+        ]
     },
     plugins: [
-        new HtmlWebpackPlugin({
-            title: 'My App',
-            template: __dirname + '/src/index.html',
-        }),
-        new CopyWebpackPlugin([{
-            from: 'src/assets',
-            to: 'assets'
-        }])
+        new ExtractTextPlugin({
+            filename: 'style.css'
+        })
     ]
-}
+};;
