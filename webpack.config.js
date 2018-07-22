@@ -4,6 +4,10 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ScriptExtPlugin = require('script-ext-html-webpack-plugin');
+const {
+    AngularCompilerPlugin
+} = require('@ngtools/webpack');
 
 module.exports = {
     entry: {
@@ -13,6 +17,9 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].[chunkhash].js'
     },
+    resolve: {
+        extensions: ['.ts', '.js']
+    },
     module: {
         rules: [{
                 test: /\.js$/,
@@ -20,6 +27,10 @@ module.exports = {
                 use: {
                     loader: "babel-loader"
                 }
+            },
+            {
+                test: /\.ts$/,
+                loader: '@ngtools/webpack'
             },
             {
                 test: /\.(jpg|png)$/,
@@ -46,6 +57,14 @@ module.exports = {
             hash: true,
             template: './src/index.html',
             filename: 'index.html'
+        }),
+        new ScriptExtPlugin({
+            defaultAttribute: 'defer'
+        }),
+        new AngularCompilerPlugin({
+            tsConfigPath: './tsconfig.json',
+            entryModule: './src/app/app.module#AppModule',
+            sourceMap: true
         }),
         new WebpackMd5Hash()
     ]

@@ -39,3 +39,7 @@ babel-preset-env
 npm i babel-core babel-loader babel-preset-env --save-dev
 
 https://hackernoon.com/a-tale-of-webpack-4-and-how-to-finally-configure-it-in-the-right-way-4e94c8e7e5c1
+
+Angular 6
+
+https://www.twilio.com/blog/2018/03/building-an-app-from-scratch-with-angular-and-webpack.html
