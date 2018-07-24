@@ -1,11 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+import '../assets/styles/main.scss';
 
 @Component({
     selector: 'my-app',
-    template: '<h1>Hello world!</h1>'
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-    constructor() {
-        console.log('I am Angular!');
+export class AppComponent implements OnInit {
+    title = 'App';
+    ngOnInit() {
+        console.log('welcome to my app!');
     }
 }

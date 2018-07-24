@@ -43,3 +43,13 @@ https://hackernoon.com/a-tale-of-webpack-4-and-how-to-finally-configure-it-in-th
 Angular 6
 
 https://www.twilio.com/blog/2018/03/building-an-app-from-scratch-with-angular-and-webpack.html
+
+angular 6 ng new angularproject
+se copian archivos:
+app/_
+environments/_
+test.ts
+
+## Futher Reading
+
+https://www.twilio.com/blog/2016/10/guide-to-javascript-promises.html
